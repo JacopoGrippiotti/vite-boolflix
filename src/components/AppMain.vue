@@ -36,4 +36,10 @@ export default {
 <style lang="scss" scoped>
     @use '../styles/partials/mixins' as*;
     @use '../styles/partials/variables' as*;
+
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: red;
+    }
 </style>

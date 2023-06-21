@@ -4,7 +4,8 @@
           :title="film.title"
           :originalTitle="film.original_title"
           :language="film.original_language"
-          :vote="film.vote_count"/>
+          :vote="film.vote_count"
+          />
     </div>
 </template>
 
@@ -25,7 +26,8 @@ export default {
     @use '../styles/partials/variables' as*;
     div.films-container{
         width: 90%;
-        @include flex(row,space-between,wrap)
+        @include flex(row,space-between,wrap);
+        margin: 0 auto;             
     }
 
 </style>

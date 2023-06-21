@@ -27,5 +27,19 @@ export default {
         display: flex;
         flex-direction: column;
         border: 1px solid black;
+        text-align: center;
+        justify-content: space-between
+        ;
+          
+        h1{
+            font-size: 1.3rem;
+            
+        }
+
+        h2{
+            font-size: 1rem;
+        }
+
+
     }
 </style>
