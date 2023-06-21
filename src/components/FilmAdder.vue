@@ -21,5 +21,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    
+    @use '../styles/partials/mixins' as*;
+    @use '../styles/partials/variables' as*;
+    div.films-container{
+        width: 90%;
+        @include flex(row,space-between,wrap)
+    }
+
 </style>
