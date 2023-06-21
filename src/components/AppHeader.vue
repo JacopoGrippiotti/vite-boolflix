@@ -1,11 +1,11 @@
 <template>
-    <div>
-        
-    </div>
+    <header>
+        <h1>Netflix</h1>
+    </header>
 </template>
 <script>
 export default {
-    name:AppHeader,
+    name:'AppHeader',
     data(){
         return{
 
