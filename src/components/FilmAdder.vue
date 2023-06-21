@@ -1,6 +1,7 @@
 <template>
     <div class="films-container">
-        <FilmElement/>
+        <FilmElement v-for="film in filmList"
+          :title="film.title"/>
     </div>
 </template>
 
@@ -10,6 +11,9 @@ export default {
     name:'FilmAdder',
     components:{
         FilmElement
+    },
+    props:{
+        filmList:Array
     }
 }
 </script>

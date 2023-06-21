@@ -1,16 +1,19 @@
 <template>
     <main>
         <SearchBar @searchedFilm="newCall"/>
+        <FilmAdder :filmList="filmList"/>
     </main>
 </template>
 
 <script>
 import SearchBar from './SearchBar.vue';
+import FilmAdder from './FilmAdder.vue';
 import axios from 'axios';
 export default {
     name:'AppMain',
     components:{
-        SearchBar
+        SearchBar,
+        FilmAdder
     },
     data(){
         return{
