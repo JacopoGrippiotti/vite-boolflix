@@ -1,7 +1,8 @@
 <template>
     <main>
         <SearchBar @searchedFilm="newCall"/>
-        <FilmAdder :filmList="filmList"/>
+        <FilmAdder 
+        :filmList="filmList"/>
     </main>
 </template>
 
