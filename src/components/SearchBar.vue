@@ -3,19 +3,9 @@
         
     </div>
 </template>
-
 <script>
-
 export default {
-    name:'AppMain',
-    components:{
-
-    },
-    data(){
-        return{
-
-        }
-    },
+    name:'SearchBar',
     methods:{
 
     }
