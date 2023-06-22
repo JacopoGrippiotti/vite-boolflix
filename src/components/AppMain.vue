@@ -1,6 +1,6 @@
 <template>
     <main>
-        <SearchBar @searchedFilm="newCall"/>
+        <SearchBar @searched="newCall"/>
         <FilmAdder 
         :filmList="filmList"/>
     </main>

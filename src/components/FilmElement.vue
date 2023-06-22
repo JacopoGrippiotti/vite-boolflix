@@ -2,8 +2,7 @@
     <div class="film-box">
         <h1>{{ title }}</h1>
         <h2>{{ originalTitle }}</h2>
-        <p class="language">{{ language }}</p>
-        <img src="" alt="">
+        <p>{{ language}}</p>
         <p class="vote"> {{ vote }}</p>
     </div>
 </template>
@@ -19,18 +18,18 @@ export default {
     },
     data(){
         return{
-            flag:""
+            flag: ""
         }
     },
     methods:{
-        filmAdder(language){
-            if(language == ''){
-                return false
+        filmAdder(){
+            if(this.language === ''){
+                return
             }
-            else if (language !== 'it'){
-                return this.language
+            else if (this.language !== 'it'){
+                return language
             }
-            else if(language === 'it'){
+            else if(this.language === 'it'){
                 this.flag = "../img/it.svg"
             }
         }
@@ -47,9 +46,17 @@ export default {
         flex-direction: column;
         border: 1px solid black;
         text-align: center;
-        justify-content: space-between
-        ;
-          
+        justify-content: space-between;
+        
+        .language{
+            display: block;
+        }
+        .flag{
+            display: block;
+        }
+        .hidden{
+        display: none;
+        }
         h1{
             font-size: 1.3rem;
             margin-top: 2px;
@@ -65,4 +72,7 @@ export default {
         }
 
     }
+
+    /* :class= "flag === 'it' ? 'language':'hidden'"*/
+    
 </style>

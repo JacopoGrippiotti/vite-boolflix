@@ -1,10 +1,11 @@
 <template>
     <input type="text" placeholder="insert film here" v-model="searchValue">
-    <button @click="$emit('searchedFilm',searchValue)">search</button>
+    <button @click="$emit('searched', searchValue)">search</button>
 </template>
 <script>
 export default {
     name:'SearchBar',
+    emits:['searched'],
     data(){
         return{
             searchValue:""
