@@ -22,7 +22,7 @@ export default {
     },
     data(){
         return{
-            acceptedLanguages:['it','en','es']
+            acceptedLanguages:['it','en','es','nl','cs','pt','fr']
         }
     }
 }

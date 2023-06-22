@@ -40,6 +40,6 @@ export default {
     main{
         display: flex;
         flex-wrap: wrap;
-        background-color: red;
+        background-color: aquamarine;
     }
 </style>

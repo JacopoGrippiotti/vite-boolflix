@@ -47,7 +47,9 @@ export default {
   @use '../styles/partials/variables' as*;
 
     div.film-box{
+        margin-top: 10px;
         width: calc((100% / 5) - 20px);
+        height: 200px;
         display: flex;
         flex-direction: column;
         border: 1px solid black;
@@ -56,8 +58,8 @@ export default {
         align-items: center;
         
         img{
-            width: 20%;
-            height: 20%;
+            width: 30px;
+            height: 30px;
         }
         .language{
             display: block;
@@ -69,19 +71,15 @@ export default {
         display: none;
         }
         h1{
-            font-size: 1.3rem;
-            margin-top: 2px;
+            font-size: 1rem;
         }
 
         h2{
-            font-size: 1rem;
-            margin-top: 2px;
+            font-size: 0.9rem;
+            
         }
 
-        p{
-            margin-top: 2px;
-        }
-
+        
     }
 
     /* :class= "flag === 'it' ? 'language':'hidden'"*/
