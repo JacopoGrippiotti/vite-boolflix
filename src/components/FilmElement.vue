@@ -1,8 +1,11 @@
 <template>
     <div class="film-box">
+      <div class="img-container">
+        <img :src="getImagePath(imagePath)" alt="">
+      </div>
         <h1>{{ title }}</h1>
         <h2>{{ originalTitle }}</h2>
-        <img v-if="flag === language" :src="getImagePath(language)" alt="">
+        <img class="flag" v-if="flag === language" :src="getFlagPath(language)" alt="">
         <p v-else>{{ language}}</p>
         <p class="vote"> {{ vote }}</p>
     </div>
@@ -16,7 +19,8 @@ export default {
         originalTitle:String,
         language:String,
         vote: Number,
-        acceptedLanguages: Array 
+        acceptedLanguages: Array,
+        imagePath:String
     },
     data(){
         return{
@@ -36,8 +40,11 @@ export default {
                 return false
             }
         },
-        getImagePath(language){
+        getFlagPath(language){
             return new URL (`../img/${language}.svg`, import.meta.url).href;
+        },
+        getImagePath(imagePath){
+            return `https://image.tmdb.org/t/p/w342/${imagePath}`
         }
     }
 }
@@ -56,8 +63,11 @@ export default {
         text-align: center;
         justify-content: space-between;
         align-items: center;
-        
         img{
+            width: 100%;
+            height: 100%;
+        }
+        img.flag{
             width: 30px;
             height: 30px;
         }

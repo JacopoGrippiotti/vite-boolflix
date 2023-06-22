@@ -7,6 +7,7 @@
         :originalTitle="film.original_title"
         :language="film.original_language"
         :vote="film.vote_count"
+        :imagePath="film.poster_path"
         :acceptedLanguages="acceptedLanguages"
           />
     </div>
