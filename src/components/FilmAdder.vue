@@ -63,7 +63,7 @@ export default {
     div.series-container{
         width: 90%;
         @include flex(row,space-between,wrap);
-        margin: 0 auto;         
+        margin: 0 auto;          
     }
 
     div.series{
