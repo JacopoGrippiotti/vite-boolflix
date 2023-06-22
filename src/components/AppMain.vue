@@ -2,7 +2,9 @@
     <main>
         <SearchBar @searched="newCall"/>
         <FilmAdder 
-        :filmList="filmList"/>
+        :filmList="filmList"
+        :seriesList="seriesList"/>
+        
     </main>
 </template>
 
@@ -19,7 +21,9 @@ export default {
     data(){
         return{
             apiUrl:'https://api.themoviedb.org/3/search/movie?api_key=4e1e3ce8a9a8b7f034096dab8c5b88cc&query=',
-            filmList:[]
+            tvApiUrl:'https://api.themoviedb.org/3/search/tv?api_key=4e1e3ce8a9a8b7f034096dab8c5b88cc&query=',
+            filmList:[],
+            seriesList:[]
         }
     },
     methods:{
@@ -28,6 +32,11 @@ export default {
             .then((response) => {
                 this.filmList = response.data.results
                 console.log(this.filmList)
+            })
+            axios.get(this.tvApiUrl + filmString)
+            .then((response) => {
+                this.seriesList = response.data.results
+                console.log(this.seriesList)
             })
             } 
     }

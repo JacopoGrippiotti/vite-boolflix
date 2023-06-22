@@ -16,7 +16,7 @@ export default {
         originalTitle:String,
         language:String,
         vote: Number,
-        acceptedLanguages: Array
+        acceptedLanguages: Array 
     },
     data(){
         return{
