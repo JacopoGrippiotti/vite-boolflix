@@ -2,10 +2,11 @@
     <div class="film-box">
         <h1>{{ title }}</h1>
         <h2>{{ originalTitle }}</h2>
-        <p>{{ language}}</p>
+        <img v-if="flag === language" :src="getImagePath(language)" alt="">
+        <p v-else>{{ language}}</p>
         <p class="vote"> {{ vote }}</p>
     </div>
-</template>
+</template>  
 
 <script>
 export default {
@@ -14,24 +15,29 @@ export default {
         title:String,
         originalTitle:String,
         language:String,
-        vote: Number
+        vote: Number,
+        acceptedLanguages: Array
     },
     data(){
         return{
-            flag: ""
+            flag: this.filmAdder(this.language,this.acceptedLanguages)
+            
         }
     },
     methods:{
-        filmAdder(){
-            if(this.language === ''){
-                return
-            }
-            else if (this.language !== 'it'){
+        filmAdder(language,acceptedLanguages){
+            console.log(acceptedLanguages)
+            console.log(language)
+            if (acceptedLanguages.includes(language)){
+                
                 return language
             }
-            else if(this.language === 'it'){
-                this.flag = "../img/it.svg"
+            else{
+                return false
             }
+        },
+        getImagePath(language){
+            return new URL (`../img/${language}.svg`, import.meta.url).href;
         }
     }
 }
@@ -47,7 +53,12 @@ export default {
         border: 1px solid black;
         text-align: center;
         justify-content: space-between;
+        align-items: center;
         
+        img{
+            width: 20%;
+            height: 20%;
+        }
         .language{
             display: block;
         }

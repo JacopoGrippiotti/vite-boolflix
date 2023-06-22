@@ -5,6 +5,7 @@
           :originalTitle="film.original_title"
           :language="film.original_language"
           :vote="film.vote_count"
+          :acceptedLanguages="acceptedLanguages"
           />
     </div>
 </template>
@@ -18,6 +19,11 @@ export default {
     },
     props:{
         filmList:Array
+    },
+    data(){
+        return{
+            acceptedLanguages:['it','en','es']
+        }
     }
 }
 </script>
