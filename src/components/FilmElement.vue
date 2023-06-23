@@ -1,6 +1,6 @@
 <template>
     <div class="film-box">
-      <div :class="(active === true) ? 'hidden': 'img-container'" @click="active = true">
+      <div :class="(active === true) ? 'hidden': 'img-container'" @click="active = true" >
         <img :class="(active === true) ? 'hidden': ''" :src="getImagePath(imagePath)" alt="">
       </div>
       <div :class="(active === true) ? 'description-container' : 'hidden'" @click="active = false">
@@ -61,6 +61,8 @@ export default {
         width: calc((100% / 5) - 20px);
         border: 1px solid black;
         color: white;
+        margin: 10px;
+        &:hover{cursor: pointer;} 
         div.img-container{
             height: 100%;
             width: 100%;
@@ -78,6 +80,7 @@ export default {
             justify-content: space-evenly;
             align-items: center;
             background-color: lightgray;
+           
         }
         img.flag{
             width: 30px;

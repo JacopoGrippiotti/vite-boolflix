@@ -58,7 +58,7 @@ export default {
    }
     div.films-container{
         width: 90%;
-        @include flex(row,space-evenly,wrap);
+        @include flex(row,flex-start,wrap);
         margin: 0 auto;            
     }
     div.series-container{
