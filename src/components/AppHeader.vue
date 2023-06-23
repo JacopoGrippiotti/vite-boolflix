@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>Netflix</h1>
+        <h1>Boolflix</h1>
     </header>
 </template>
 <script>
@@ -17,4 +17,12 @@ export default {
      @use '../styles/partials/mixins' as*;
      @use '../styles/partials/variables' as*;
 
+     header{
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: red;
+        background-color: black;
+     }
 </style>

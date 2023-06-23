@@ -6,7 +6,7 @@
         :title="film.title"
         :originalTitle="film.original_title"
         :language="film.original_language"
-        :vote="film.vote_count"
+        :vote="film.vote_average"
         :imagePath="film.poster_path"
         :acceptedLanguages="acceptedLanguages"
           />
@@ -21,7 +21,8 @@
         :title="series.name"
         :originalTitle="series.original_name"
         :language="series.original_language"
-        :vote="series.vote_count"
+        :vote="series.vote_average"
+        :imagePath="series.poster_path"
         :acceptedLanguages="acceptedLanguages"
           />
     </div>
@@ -51,20 +52,18 @@ export default {
     @use '../styles/partials/mixins' as*;
     @use '../styles/partials/variables' as*;
 
-    h1{
-        color: red;
-    }
+   
    div.films{
     width: 100%;
    }
     div.films-container{
         width: 90%;
-        @include flex(row,space-between,wrap);
+        @include flex(row,space-evenly,wrap);
         margin: 0 auto;            
     }
     div.series-container{
         width: 90%;
-        @include flex(row,space-between,wrap);
+        @include flex(row,space-evenly,wrap);
         margin: 0 auto;          
     }
 
@@ -74,6 +73,8 @@ export default {
     h1{
         text-align: center;
         margin-top: 2px;
+        color: red;
+        margin-top: 10px;
     }
 
 </style>

@@ -25,7 +25,7 @@ export default {
     div.searchBar-container{
         width: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         padding: 20px;
     }
 </style>

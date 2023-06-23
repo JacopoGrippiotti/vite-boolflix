@@ -57,10 +57,10 @@ export default {
   @use '../styles/partials/variables' as*;
 
     div.film-box{
-        margin-top: 10px;
+        margin-top: 25px;
         width: calc((100% / 5) - 20px);
         border: 1px solid black;
-        
+        color: white;
         div.img-container{
             height: 100%;
             width: 100%;
@@ -77,6 +77,7 @@ export default {
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
+            background-color: lightgray;
         }
         img.flag{
             width: 30px;
@@ -99,6 +100,5 @@ export default {
         
     }
 
-    /* :class= "flag === 'it' ? 'language':'hidden'"*/
     
 </style>
