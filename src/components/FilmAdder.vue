@@ -51,8 +51,9 @@ export default {
     @use '../styles/partials/mixins' as*;
     @use '../styles/partials/variables' as*;
 
-   
-
+    h1{
+        color: red;
+    }
    div.films{
     width: 100%;
    }

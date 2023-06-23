@@ -49,6 +49,6 @@ export default {
     main{
         display: flex;
         flex-wrap: wrap;
-        background-color: aquamarine;
+        background-color: rgb(42, 40, 40);
     }
 </style>

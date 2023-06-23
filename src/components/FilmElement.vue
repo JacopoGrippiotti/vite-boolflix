@@ -1,13 +1,16 @@
 <template>
     <div class="film-box">
-      <div class="img-container">
-        <img :src="getImagePath(imagePath)" alt="">
+      <div :class="(active === true) ? 'hidden': 'img-container'" @click="active = true">
+        <img :class="(active === true) ? 'hidden': ''" :src="getImagePath(imagePath)" alt="">
       </div>
+      <div :class="(active === true) ? 'description-container' : 'hidden'" @click="active = false">
         <h1>{{ title }}</h1>
         <h2>{{ originalTitle }}</h2>
         <img class="flag" v-if="flag === language" :src="getFlagPath(language)" alt="">
         <p v-else>{{ language}}</p>
         <p class="vote"> {{ vote }}</p>
+      </div>
+        
     </div>
 </template>  
 
@@ -24,8 +27,8 @@ export default {
     },
     data(){
         return{
-            flag: this.filmAdder(this.language,this.acceptedLanguages)
-            
+            flag: this.filmAdder(this.language,this.acceptedLanguages),
+            active:false
         }
     },
     methods:{
@@ -56,30 +59,31 @@ export default {
     div.film-box{
         margin-top: 10px;
         width: calc((100% / 5) - 20px);
-        height: 200px;
-        display: flex;
-        flex-direction: column;
         border: 1px solid black;
-        text-align: center;
-        justify-content: space-between;
-        align-items: center;
-        img{
-            width: 100%;
+        
+        div.img-container{
             height: 100%;
+            width: 100%;
+
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        div.description-container{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
         }
         img.flag{
             width: 30px;
             height: 30px;
         }
-        .language{
-            display: block;
-        }
-        .flag{
-            display: block;
-        }
-        .hidden{
-        display: none;
-        }
+    
+        
         h1{
             font-size: 1rem;
         }
@@ -89,6 +93,9 @@ export default {
             
         }
 
+        .hidden{
+            display: none ;
+        }
         
     }
 

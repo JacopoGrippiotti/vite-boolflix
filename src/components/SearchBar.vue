@@ -1,6 +1,8 @@
 <template>
-    <input type="text" placeholder="insert film here" v-model="searchValue">
-    <button @click="$emit('searched', searchValue)">search</button>
+    <div class="searchBar-container">
+        <input type="text" placeholder="insert film here" v-model="searchValue">
+        <button @click="$emit('searched', searchValue)">search</button>
+    </div>
 </template>
 <script>
 export default {
@@ -19,4 +21,11 @@ export default {
 <style lang="scss" scoped>
     @use '../styles/partials/mixins' as*;
     @use '../styles/partials/variables' as*;
+
+    div.searchBar-container{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+    }
 </style>
